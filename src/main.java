@@ -10,24 +10,18 @@ public class main {
         int realNumber = random.nextInt(maxValue);
         System.out.println(realNumber);
 
-        int attemptNumber = 0;
+        int attemptNumber;
         int counter = 1;
-        System.out.print("The number created. Please try to enter the positive integer number between 1 and " + maxValue + " to guess it : ");
-        while (attemptNumber != realNumber) {
+        System.out.print("The number created. Please try to enter a positive integer number between 1 and " + maxValue + " to guess it. \nAttempt 1 : ");
+
+        do {
             counter++;
             attemptNumber = scanner.nextInt();
-            if (attemptNumber == realNumber) {
-                System.out.println("Yes! It is " + realNumber + ". The number of attempts is " + counter + ". ");
-                break;
-            } else {
-                if (attemptNumber > realNumber) System.out.print(counter + ". Please enter number less then " + attemptNumber + " : ");
-                else System.out.print(counter + ". Please enter number more then " + attemptNumber + " : ");
-            }
-        }
-
-    }
-
-    public void enterNumber() {
-
+            if (attemptNumber > realNumber)
+                System.out.print("Attempt " + counter + ". No, please enter number less then " + attemptNumber + " : ");
+            else if (attemptNumber < realNumber)
+                System.out.print("Attempt " + counter + ". No, please enter number more then " + attemptNumber + " : ");
+        } while (attemptNumber != realNumber);
+        System.out.println("Yes! It is " + realNumber + "! The number of attempts is " + (counter-1) + ". ");
     }
 }
