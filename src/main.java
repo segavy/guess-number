@@ -8,7 +8,7 @@ public class main {
         System.out.print("Please enter the maximum available number: ");
         maxValue = scanner.nextInt();
         int realNumber = random.nextInt(maxValue);
-        System.out.println(realNumber);
+        //System.out.println(realNumber);
 
         int attemptNumber;
         int counter = 1;
